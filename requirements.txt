@@ -1,5 +1,4 @@
 Numpy== 1.25.2
-pickle5==0.0.12
 streamlit==1.10.0
 pandas==2.0.3
 tensorflow==2.15.0
