@@ -5,12 +5,23 @@ import pickle
 from tensorflow.keras.models import load_model
 from datetime import datetime, timedelta
 
-# Load your trained model and preprocessing tools
-model = load_model('best_model.h5')
-with open('label_encoder.pkl', 'rb') as le:
-    label_encoder = pickle.load(le)
-with open('minmax_scaler.pkl', 'rb') as sc:
-    scaler = pickle.load(sc)
+import os
+
+def load_resources():
+    current_dir = os.path.dirname(__file__)
+    model_path = os.path.join(current_dir, 'best_model.h5')
+    label_encoder_path = os.path.join(current_dir, 'label_encoder.pkl')
+    scaler_path = os.path.join(current_dir, 'minmax_scaler.pkl')
+    
+    model = load_model(model_path)
+    with open(label_encoder_path, 'rb') as le:
+        label_encoder = pickle.load(le)
+    with open(scaler_path, 'rb') as sc:
+        scaler = pickle.load(sc)
+
+    return model, label_encoder, scaler
+
+model, label_encoder, scaler = load_resources()
 
 def preprocess_input(data):
     # Scale the features using the loaded scaler
