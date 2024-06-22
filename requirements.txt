@@ -3,3 +3,4 @@ streamlit==1.10.0
 pandas==2.0.3
 tensorflow==2.15.0
 Scikit-learn ==1.2.2
+altair==4.2.0
