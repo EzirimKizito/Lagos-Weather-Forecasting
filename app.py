@@ -53,6 +53,11 @@ def calculate_derived_date_features(date):
 
 # Streamlit interface
 st.title('Weather Forecasting App')
+
+
+st.markdown("#### PROJECT WORK BY: Abdulmalik Shafiu Ozovehe")
+
+
 st.write('Please enter the starting date and weather data for the past 4 days:')
 
 # Collecting date input
