@@ -6,10 +6,10 @@ from tensorflow.keras.models import load_model
 from datetime import datetime, timedelta
 
 # Load your trained model and preprocessing tools
-model = load_model('/content/best_model.h5')
-with open('/content/label_encoder.pkl', 'rb') as le:
+model = load_model('best_model.h5')
+with open('label_encoder.pkl', 'rb') as le:
     label_encoder = pickle.load(le)
-with open('/content/minmax_scaler.pkl', 'rb') as sc:
+with open('minmax_scaler.pkl', 'rb') as sc:
     scaler = pickle.load(sc)
 
 def preprocess_input(data):
